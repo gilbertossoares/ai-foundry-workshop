@@ -1,103 +1,210 @@
-# Lab 4: Frameworks de LLM - Desenvolvendo com Semantic Kernel, AutoGen e LangChain
+# Lab 4: Frameworks Avançados - Semantic Kernel e AutoGen
 
-> **⚠️ Nota**: Este laboratório está em desenvolvimento. O notebook `lab4.ipynb` será disponibilizado em breve com exercícios práticos.
+## Visão Geral
 
-Este laboratório apresenta uma visão geral dos principais frameworks para desenvolvimento de aplicações com Modelos de Linguagem de Grande Escala (LLMs), como o Semantic Kernel, AutoGen e LangChain. Estes frameworks fornecem ferramentas e abstrações para facilitar a integração e orquestração de LLMs em aplicações.
+Neste laboratório você explorará dois frameworks poderosos para construção de aplicações inteligentes: **Semantic Kernel** e **AutoGen** com Azure OpenAI. Aprenderá como criar agentes conversacionais, orchestrar múltiplos agentes, implementar plugins personalizados e desenvolver workflows complexos de automação.
 
-## Objetivos de Aprendizado
+O **Semantic Kernel** é um SDK open-source da Microsoft que permite integrar modelos de IA com linguagens de programação convencionais, oferecendo funcionalidades como plugins, planejamento e memória. O **AutoGen** é um framework da Microsoft para criar aplicações multi-agente onde diferentes agentes podem colaborar para resolver problemas complexos através de conversação estruturada.
 
-- Compreender o propósito e os casos de uso de cada framework
-- Explorar exemplos básicos de implementação com cada tecnologia
-- Comparar as abordagens dos diferentes frameworks
-- Desenvolver um mini-projeto usando um dos frameworks
+## Objetivos
+
+- ✅ Configurar e usar o Semantic Kernel com Azure OpenAI
+- ✅ Criar e implementar plugins personalizados
+- ✅ Trabalhar com templates de prompts e argumentos dinâmicos
+- ✅ Configurar agentes AutoGen especializados
+- ✅ Implementar sistemas multi-agente colaborativos
+- ✅ Comparar abordagens entre Semantic Kernel e AutoGen
+- ✅ Desenvolver sistema de análise de produtos combinando ambos
 
 ## Pré-requisitos
 
-- Conhecimento básico de Python
-- Familiaridade com conceitos de LLMs
-- Ambiente de desenvolvimento Python configurado
-- Chaves de API para Azure OpenAI Service
+- Conhecimento básico de Python e programação assíncrona
+- Familiaridade com conceitos de LLMs e IA generativa
+- Conclusão dos Labs 1-3 (recomendado)
+- Variáveis de ambiente configuradas no arquivo `.env`
+- Acesso ao Azure OpenAI Service
 
-## Frameworks de LLM
+## Conteúdo do Laboratório
 
-### Semantic Kernel
+### Exercício 1 - Configuração e Semantic Kernel
 
-O Semantic Kernel é um framework de código aberto desenvolvido pela Microsoft que permite integrar LLMs em aplicações de forma modular e estruturada.
+**Configuração Inicial**:
+- Instalação das dependências necessárias
+- Importação das bibliotecas (semantic-kernel, autogen)
+- Carregamento das credenciais do Azure OpenAI
+- Inicialização do kernel do Semantic Kernel
 
-#### Exemplo Básico com Semantic Kernel
+**Recursos Cobertos**:
+- Configuração do AzureChatCompletion
+- Adição de serviços ao kernel
+- Estruturação básica para desenvolvimento
 
+### Exercício 2 - Plugins e Funcionalidades Avançadas
+
+**Plugins Built-in**:
+- Exploração do TextPlugin integrado
+- Operações de manipulação de texto
+- Uso de plugins pré-construídos
+
+**Plugin Personalizado - MathPlugin**:
+- Criação de plugin para operações matemáticas
+- Implementação de funções com decorators
+- Anotações de tipo para parâmetros
+- Tratamento de erros e validação
+
+**Funcionalidades Demonstradas**:
 ```python
-import semantic_kernel as sk
-from semantic_kernel.connectors.ai.open_ai import AzureTextCompletion
-
-# Inicializar o kernel
-kernel = sk.Kernel()
-
-# Configurar serviço AI
-deployment_name = "text-davinci-003"
-endpoint = "https://your-endpoint.openai.azure.com/"
-api_key = "sua-chave-api"
-
-# Adicionar o serviço de IA ao kernel
-kernel.add_text_completion_service("demoservice", 
-                                  AzureTextCompletion(deployment_name, endpoint, api_key))
-
-# Criar uma função semântica
-prompt_config = sk.PromptTemplateConfig.from_completion_parameters(
-    max_tokens=2000,
-    temperature=0.7,
-    top_p=0.8
-)
-
-prompt_template = """
-Resuma o seguinte texto em 3 pontos principais:
-{{$input}}
-"""
-
-summary_function = kernel.create_semantic_function(
-    prompt_template, 
-    prompt_config, 
-    "summarize", 
-    "summary"
-)
-
-# Executar a função
-text = "..."  # Texto longo aqui
-summary = summary_function(text)
-print(summary)
+@kernel_function(description="Calcula a média de uma lista de números")
+def calculate_average(self, numbers: str) -> str:
+    # Implementação de cálculo de média
+    
+@kernel_function(description="Encontra o maior número em uma lista")  
+def find_maximum(self, numbers: str) -> str:
+    # Implementação de busca do máximo
 ```
 
-### AutoGen
+**Templates de Prompt**:
+- Criação de funções semânticas
+- Uso de argumentos dinâmicos com KernelArguments
+- Templates personalizados para diferentes cenários
 
-AutoGen é um framework que permite criar, usar e otimizar agentes de IA que podem conversar entre si para resolver tarefas. Desenvolvido pela Microsoft, ele facilita a criação de fluxos multiagente.
+### Exercício 3 - Introdução ao AutoGen
 
-#### Exemplo Básico com AutoGen
+**Conceitos Fundamentais**:
+- **Agentes**: Entidades que enviam e recebem mensagens
+- **Conversação**: Fluxo estruturado de mensagens entre agentes
+- **Roles**: Papéis específicos (Assistant, User Proxy, etc.)
+- **Especialização**: Agentes com expertise em domínios específicos
 
+**Nova API AutoGen 0.6+**:
+- Uso do `model_client` ao invés de `llm_config`
+- Método `run()` assíncrono para execução
+- `AzureOpenAIChatCompletionClient` para integração Azure
+- Estrutura simplificada e mais limpa
+
+**Exemplo de Configuração**:
 ```python
-import autogen
-
-# Configurar os modelos
-config_list = [
-    {
-        "model": "gpt-4",
-        "api_key": "sua-chave-api",
-    }
-]
-
-# Criar agentes
-assistant = autogen.AssistantAgent(
-    name="assistant",
-    llm_config={"config_list": config_list}
+# Cliente Azure OpenAI
+azure_model_client = AzureOpenAIChatCompletionClient(
+    azure_deployment=deployment_name,
+    model=deployment_name,
+    api_version=api_version,
+    azure_endpoint=azure_endpoint,
+    api_key=api_key
 )
 
-user_proxy = autogen.UserProxyAgent(
-    name="user_proxy",
-    human_input_mode="TERMINATE",
-    max_consecutive_auto_reply=10,
+# Agente assistente especializado
+assistente_criativo = AssistantAgent(
+    name="assistente_criativo",
+    model_client=azure_model_client,
+    system_message="Você é um assistente criativo especializado..."
 )
+```
 
-# Iniciar conversa entre agentes
-user_proxy.initiate_chat(
+### Quando Usar Cada Framework
+
+**Semantic Kernel é ideal para**:
+- Orchestração de AI com código tradicional
+- Criação de plugins e funções reutilizáveis
+- Aplicações que precisam de planejamento automático
+- Integração com sistemas existentes
+- Aplicações single-agent com funcionalidades complexas
+
+**AutoGen é ideal para**:
+- Sistemas multi-agente complexos
+- Simulações de discussões e brainstorming
+- Workflows que envolvem múltiplas perspectivas
+- Automação de processos colaborativos
+- Sistemas de tomada de decisão distribuída
+
+### Sistema Prático - Análise de Produtos
+
+**Combinação de Frameworks**:
+O laboratório culmina com um sistema prático que combina ambos os frameworks:
+
+1. **Semantic Kernel** para:
+   - Plugin de análise de sentimentos
+   - Processamento estruturado de feedbacks
+   - Funções reutilizáveis de análise
+
+2. **AutoGen** para:
+   - Agente especialista em qualidade
+   - Agente especialista em experiência do usuário
+   - Análise colaborativa de múltiplas perspectivas
+
+**Fluxo do Sistema**:
+```
+Feedbacks → Semantic Kernel (Análise Sentimento) → AutoGen (Especialistas) → Relatório Final
+```
+
+## Instruções de Execução
+
+1. **Instalação de Dependências**:
+   ```bash
+   pip install semantic-kernel autogen-agentchat autogen-ext[openai,azure] python-dotenv
+   ```
+
+2. **Configuração**:
+   - Configure as variáveis do Azure OpenAI no arquivo `.env`
+   - Certifique-se de ter acesso ao Azure OpenAI Service
+
+3. **Execução**:
+   - Abra o notebook `lab4.ipynb` no Azure AI Foundry ou VS Code
+   - Execute as células sequencialmente
+   - Observe as diferenças entre as abordagens
+
+4. **Experimentação**:
+   - Modifique os agentes especializados
+   - Crie novos plugins para o Semantic Kernel
+   - Teste diferentes cenários de análise
+
+## Estrutura do Laboratório
+
+- **Configuração inicial** e imports
+- **Semantic Kernel básico** com templates
+- **Plugins personalizados** com funções matemáticas  
+- **AutoGen configuração** com nova API
+- **Agentes especializados** por domínio
+- **Sistema integrado** combinando ambos frameworks
+- **Comparações práticas** entre abordagens
+
+## Resultados Esperados
+
+Ao completar este laboratório, você será capaz de:
+- Configurar e usar o Semantic Kernel efetivamente
+- Criar plugins personalizados para funcionalidades específicas
+- Implementar agentes AutoGen especializados
+- Escolher o framework adequado para cada cenário
+- Combinar frameworks para soluções híbridas
+- Desenvolver sistemas de análise multi-perspectiva
+
+## Recursos Adicionais
+
+### Semantic Kernel:
+- [Documentação Oficial](https://learn.microsoft.com/semantic-kernel/)
+- [Repositório GitHub](https://github.com/microsoft/semantic-kernel)
+- [Exemplos e Tutoriais](https://learn.microsoft.com/semantic-kernel/get-started/)
+- [Plugins da Comunidade](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic_kernel/core_plugins)
+
+### AutoGen:
+- [Documentação Oficial](https://microsoft.github.io/autogen/)
+- [Repositório GitHub](https://github.com/microsoft/autogen)
+- [Galeria de Exemplos](https://microsoft.github.io/autogen/docs/Examples)
+- [Notebooks de Tutorial](https://github.com/microsoft/autogen/tree/main/notebook)
+
+### Azure AI Foundry:
+- [Portal do Azure AI Foundry](https://ai.azure.com/)
+- [Documentação do Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/)
+- [Modelos Disponíveis](https://learn.microsoft.com/azure/ai-foundry/concepts/foundry-models-overview)
+- [Melhores Práticas](https://learn.microsoft.com/azure/ai-services/openai/concepts/best-practices)
+
+## Desafios para Prática
+
+1. **Expansão do Sistema**: Adicione plugins para análise de imagens de produtos
+2. **Agentes Especializados**: Crie agentes para diferentes setores (finanças, educação)
+3. **Workflow Complexo**: Implemente sistema de aprovação multi-etapas
+4. **Interface de Usuário**: Crie interface web para interagir com os agentes
+5. **Integração de Dados**: Conecte com APIs externas para enriquecimento de dados
     assistant,
     message="Crie uma função Python que calcule números Fibonacci até n."
 )

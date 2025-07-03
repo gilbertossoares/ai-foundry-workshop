@@ -2,21 +2,22 @@
 
 ## Overview
 
-In this laboratory, you will take the first steps with Azure OpenAI Service, from initial configuration to executing practical tasks including API calls, response analysis, embedding generation, image processing, and exploring other models available in Azure AI Foundry.
+In this laboratory, you will take the first steps with Azure OpenAI Service, learning from initial configuration to advanced practical tasks. The lab covers API calls, detailed response analysis, embedding generation, image processing with multimodal models, and exploration of other LLM models available in Azure AI Foundry.
 
 ## Objectives
 
-- Configure and connect with Azure OpenAI Service
-- Perform basic and advanced calls to the chat completions API
-- Analyze API responses in detail
-- Generate and work with text embeddings
-- Process images using multimodal models
-- Explore other LLM models available in Azure AI Foundry
+- ✅ Configure and connect with Azure OpenAI Service
+- ✅ Perform basic and advanced calls to the chat completions API
+- ✅ Analyze API responses and metadata in detail
+- ✅ Generate and work with text embeddings for semantic analysis
+- ✅ Process images using multimodal models (computer vision)
+- ✅ Explore other LLM models available in Azure AI Foundry
+- ✅ Complete practical activities to consolidate learning
 
 ## Prerequisites
 
 - Azure account with access to Azure OpenAI Service
-- Environment variables configured in the `.env` file
+- Environment variables configured in the `.env` file at project root
 - Basic Python knowledge
 - Access to Azure AI Foundry
 
@@ -24,21 +25,24 @@ In this laboratory, you will take the first steps with Azure OpenAI Service, fro
 
 ### Exercise 1 - API Call
 
-Learn to configure the Azure OpenAI client and make your first API call, including:
-- Credential and endpoint configuration
-- Message structuring with different roles (system, user, assistant)
-- Executing chat completion calls
+Configure the Azure OpenAI client and make your first API call:
+- Import necessary libraries (openai, dotenv)
+- Load credentials from `.env` file
+- Initialize Azure OpenAI client
+- Structure messages with different roles (system, user, assistant)
+- Execute chat completion calls with context
 
 ### Exercise 2 - Analyzing the Response
 
-Explore in detail the complete structure of the API response, including:
-- Response metadata analysis
-- Token usage information
-- Content filtering details
+Explore in detail the complete structure of the API response:
+- Metadata analysis (ID, model, timestamp)
+- Detailed token usage information
+- Content filtering and security evaluations
 - Prompt and completion token counters
 - Reasoning token details for advanced models
+- Structured JSON response formatting
 
-Experiment with important parameters such as:
+Experiment with important parameters:
 - **max_completion_tokens**: Control response size
 - **temperature**: Adjust creativity (0.0 = deterministic, 1.0 = creative)
 - **top_p**: Control diversity via nucleus sampling
@@ -47,56 +51,87 @@ Experiment with important parameters such as:
 
 ### Exercise 3 - Embeddings
 
-Discover how to work with embeddings for semantic analysis:
-- Generate embeddings from text
-- Understanding numerical representations of meaning
+Learn to work with embeddings for semantic analysis:
+- Generate embeddings from text using Azure OpenAI
+- Understand vectorial representations of semantic meaning
 - Use cases for semantic search, classification, and similarity analysis
+- Compare similarity between related words
 
 Explore embedding storage options in Azure:
-- Azure AI Search
+- Azure AI Search (vector search)
 - Azure Cosmos DB (MongoDB vCore, NoSQL, PostgreSQL)
-- Azure SQL Database
-- Azure Cache for Redis
-- Azure Database for PostgreSQL
-- Microsoft Fabric Eventhouse
-
+- Azure SQL Database (vector search)
+- Azure Cache for Redis (vector similarity)
+- Azure Database for PostgreSQL (pgvector)
+- Microsoft Fabric Eventhouse (vector database)
 ### Exercise 4 - Image Processing
 
-Learn to work with multimodal models:
-- Sending images via URL
-- Encoding local images to base64
-- Combining text and images in prompts
-- Image description and analysis using AI
+Learn to work with multimodal models for computer vision:
+- Send images via public URL
+- Encode local images to base64
+- Combine text and images in multimodal prompts
+- Automatic description and detailed image analysis
+- Process different types of visual content
 
 ### Exercise 5 - Other Models in Azure AI Foundry
 
 Explore the diversity of models available through the Model Catalog:
-- Microsoft models (OpenAI, Meta, Mistral AI, Deepseek, xAI, Black Forest Labs)
-- Partner models (Nixtla, AI21, NTT Data, Core42, NVIDIA NIM, Stability AI)
-- Configuration and use of different client libraries
+- **Microsoft Models**: OpenAI, Meta, Mistral AI, Deepseek, xAI, Black Forest Labs
+- **Partner Models**: Nixtla, AI21, NTT Data, Core42, NVIDIA NIM, Stability AI
+- Configuration of different client libraries (azure-ai-inference)
 - Practical example with Phi-4 model
+- Different deployment and availability modes
 
-### Available Advanced Features
+### 🎯 Practical Activities Included
 
-The laboratory also presents other Azure OpenAI functionalities:
-- Responses API
-- Reasoning Models
-- Computer Use
-- Model Router
-- Function Calling
-- Predicted Outputs
-- Prompt Caching
-- Structured Outputs
-- JSON Mode
-- Reproducible Output
+The laboratory includes 5 practical activities to consolidate learning:
 
-## Instructions
+1. **Temperature Testing**: Experiment how different temperature values affect creativity
+2. **Embedding Comparison**: Analyze similarity between related words
+3. **Image Analysis with Different Prompts**: Test various types of questions for the same image
+4. **Token Counter**: Understand how prompt size affects consumption
+5. **Persona Testing**: Explore how different system messages create distinct personalities
 
-1. Configure environment variables in the `.env` file at the repository root
-2. Open the `lab1.ipynb` notebook in Azure AI Foundry
-3. Execute cells sequentially, observing examples and results
-4. Experiment with modifying parameters to understand their impact
-5. Test with your own prompts and images
+### Advanced Features Presented
+
+The laboratory presents other advanced Azure OpenAI functionalities:
+- **Responses API**: Multiple response alternatives
+- **Reasoning Models**: Models with reasoning capability (o1)
+- **Computer Use**: User interface interaction
+- **Model Router**: Intelligent routing between models
+- **Function Calling**: External function calling
+- **Predicted Outputs**: Completion optimization
+- **Prompt Caching**: Prompt caching for efficiency
+- **Structured Outputs**: Structured format outputs
+- **Vision-enabled Chats**: Conversations with image support
+- **JSON Mode**: Structured JSON responses
+- **Reproducible Output**: Consistent results
+
+## Execution Instructions
+
+1. **Initial Setup**:
+   - Configure environment variables in the `.env` file at repository root
+   - Ensure you have access to Azure OpenAI Service
+
+2. **Execution**:
+   - Open the `lab1.ipynb` notebook in Azure AI Foundry or VS Code
+   - Execute cells sequentially, observing examples and results
+   - Experiment with modifying parameters to understand their impact
+
+3. **Experimentation**:
+   - Test with your own custom prompts
+   - Experiment with different images (URLs or local)
+   - Modify parameters in practical activities
+
+## Expected Results
+
+Upon completing this laboratory, you will be able to:
+- Connect and use Azure OpenAI Service effectively
+- Analyze and interpret detailed API responses
+- Generate and compare embeddings for semantic analysis
+- Process images with multimodal models
+- Choose and configure different models from Azure AI Foundry
+- Apply basic prompt engineering techniques
 
 ## Additional Resources
 
@@ -106,7 +141,8 @@ The laboratory also presents other Azure OpenAI functionalities:
 - [Chat Completions API](https://learn.microsoft.com/azure/ai-services/openai/how-to/chatgpt)
 - [Function Calling](https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling)
 - [Structured Outputs](https://learn.microsoft.com/azure/ai-services/openai/how-to/structured-outputs)
+- [Vision-enabled Chats](https://learn.microsoft.com/azure/ai-services/openai/how-to/gpt-with-vision)
 
 ## Next Steps
 
-After completing this laboratory, you will be prepared to advance to Lab 2, where you will explore more advanced concepts of implementation and specific use cases with Azure OpenAI.
+After completing this laboratory, you will be prepared to advance to Lab 2, where you will explore the comprehensive Azure AI Services ecosystem beyond OpenAI.

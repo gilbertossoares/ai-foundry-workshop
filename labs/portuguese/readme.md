@@ -1,116 +1,159 @@
-# Workshop Azure AI Foundry
+# Workshop Azure AI Foundry - Português
 
-Este repositório contém uma série de laboratórios práticos projetados para explorar e aprender sobre os serviços de IA do Azure, com foco no Azure AI Foundry e tecnologias relacionadas.
+Este workshop oferece uma jornada completa através das capacidades mais recentes do **Azure AI Foundry**, desde conceitos fundamentais até implementações avançadas de IA generativa. Cada laboratório foi cuidadosamente projetado para construir conhecimento progressivamente, permitindo que você domine as ferramentas e técnicas essenciais para desenvolvimento de aplicações inteligentes.
 
-## Visão Geral do Workshop
+## 🎯 Objetivos do Workshop
 
-Este workshop abrangente oferece uma jornada completa através das capacidades mais recentes do Azure AI Foundry, desde conceitos fundamentais até implementações avançadas de IA. Cada laboratório foi cuidadosamente projetado para construir conhecimento progressivamente, permitindo que você domine as ferramentas e técnicas essenciais para desenvolvimento de IA.
+- **Dominar o Azure AI Foundry**: Configuração, uso e melhores práticas
+- **Aplicar Prompt Engineering**: Técnicas avançadas para otimizar interações com LLMs
+- **Implementar RAG**: Sistemas de recuperação e geração aumentada
+- **Usar Frameworks Avançados**: Semantic Kernel e AutoGen para aplicações complexas
+- **Integrar Serviços de IA**: Speech, Vision, Language e Content Safety
+- **Desenvolver Soluções Práticas**: Projetos reais com casos de uso empresariais
 
-## Estrutura dos Laboratórios
+## 📚 Estrutura dos Laboratórios
 
-### [Lab 1: Conexão e Primeiros Passos com Azure OpenAI](lab1/)
+### [🚀 Lab 1: Conexão e Primeiros Passos com Azure OpenAI](lab1/)
 **Fundamentos e Configuração Inicial**
 
-- Configuração e conexão com Azure OpenAI Service
-- Primeiras chamadas à API e análise detalhada de respostas
-- Geração e utilização de embeddings para análise semântica
-- Processamento de imagens com modelos multimodais
-- Exploração de outros modelos LLM disponíveis no Azure AI Foundry
-- Funcionalidades avançadas: Responses API, Reasoning Models, Function Calling
+Estabeleça a base sólida para trabalhar com Azure OpenAI, desde configuração até uso avançado de modelos multimodais.
 
-**Principais Recursos Abordados:**
-- Configuração de credenciais e endpoints
-- Parâmetros importantes (temperature, top_p, frequency_penalty)
-- Análise de metadados e uso de tokens
-- Embeddings e suas aplicações práticas
-- Modelos multimodais para processamento de imagem
+**O que você aprenderá:**
+- ✅ Configuração completa do Azure OpenAI Service
+- ✅ Chamadas à API com análise detalhada de respostas
+- ✅ Geração e análise de embeddings para busca semântica
+- ✅ Processamento de imagens com modelos multimodais (GPT-4V)
+- ✅ Exploração do Model Catalog com 200+ modelos
+- ✅ 5 atividades práticas interativas para consolidar aprendizado
 
-### [Lab 2: Explorando Serviços de IA do Azure Foundry](lab2/)
-**Ecossistema Completo de Serviços de IA**
+**Funcionalidades Avançadas Incluídas:**
+- Responses API, Reasoning Models, Function Calling
+- Structured Outputs, JSON Mode, Prompt Caching
+- Computer Use, Model Router, Predicted Outputs
 
-- **Azure AI Speech**: Reconhecimento de fala, síntese de voz e tradução de áudio
-- **Azure AI Language + Translator**: Análise de texto, NER, análise de sentimento, tradução
-- **Azure AI Vision + Document**: OCR, análise de imagem, processamento de documentos
-- **Azure AI Content Safety**: Detecção e filtragem de conteúdo prejudicial
+### [🧠 Lab 2: Explorando Serviços de IA do Azure Foundry](lab2/)
+**Ecossistema Completo de Serviços Multimodais**
 
-**Casos de Uso Implementados:**
-- Transcrição de áudio e geração de legendas
-- Análise semântica de textos e documentos
-- Processamento de documentos comerciais e faturas
-- Sistemas de moderação de conteúdo
+Domine os quatro pilares dos serviços de IA do Azure para criar aplicações completas e robustas.
 
-### [Lab 3: Prompt Engineering](lab3/)
-**Técnicas Avançadas de Engenharia de Prompts**
+**Serviços Cobertos:**
 
-- **Zero-Shot Prompting**: Criação de prompts eficazes sem exemplos
-- **Few-Shot Prompting**: Melhoria da qualidade com exemplos direcionados
-- **Chain-of-Thought Prompting**: Incentivando raciocínio passo a passo
-- **Meta Prompting**: Instruções sobre como abordar diferentes tarefas
-- **Prompt Chaining**: Divisão de tarefas complexas em sequências focadas
-- **Tree of Thoughts (ToT)**: Consideração de múltiplas linhas de raciocínio
-- **Retrieval Augmented Generation (RAG)**: Combinação de informações externas
-- **Active-Prompt**: Prompts que se adaptam dinamicamente
+**🎤 Azure AI Speech**
+- Reconhecimento de fala contínuo em português
+- Síntese de voz natural e personalizada
+- Tradução de áudio em tempo real
+- Casos de uso: call centers, acessibilidade, assistentes
 
-**Melhores Práticas:**
-- Especificidade e clareza nas instruções
-- Uso efetivo de analogias e exemplos
-- Importância da ordem e estrutura
-- Estratégias de fallback e alternativas
+**💬 Azure AI Language + Translator**
+- Análise de sentimentos com scores de confiança
+- Extração de entidades e frases-chave
+- Detecção de PII/PHI para conformidade
+- Sumarização automática e tradução
 
-### [Lab 4: Frameworks de LLM - Semantic Kernel, AutoGen e LangChain](lab4/)
+**👁️ Azure AI Vision + Document Intelligence**
+- OCR avançado para 300+ formatos de arquivo
+- Análise de imagens com detecção de objetos
+- Processamento de documentos comerciais
+- Extração de dados estruturados
+
+**🛡️ Azure AI Content Safety**
+- Moderação de conteúdo em texto e imagem
+- Detecção de ódio, violência, conteúdo sexual
+- Escudos contra prompt injection
+- Conformidade e governança
+
+### [🎨 Lab 3: Prompt Engineering - Técnicas Avançadas](lab3/)
+**Masterclass em Otimização de Prompts**
+
+Domine 8 técnicas avançadas de prompt engineering para maximizar a eficácia dos modelos de linguagem.
+
+**Técnicas Implementadas:**
+
+| Técnica | Quando Usar | Benefícios |
+|---------|-------------|------------|
+| **Zero-Shot** | Tarefas simples, testes iniciais | Simplicidade, rapidez |
+| **Few-Shot** | Tarefas estruturadas | Consistência, formato específico |
+| **Chain-of-Thought** | Problemas complexos | Raciocínio verificável |
+| **Meta Prompting** | Otimização de prompts | Melhoria automática |
+| **Prompt Chaining** | Workflows complexos | Controle granular |
+| **Tree of Thoughts** | Múltiplas soluções | Exploração de alternativas |
+| **RAG** | Conhecimento específico | Informações atualizadas |
+| **Active-Prompt** | Sistemas adaptativos | Otimização dinâmica |
+
+**Resultados Esperados:**
+- 📈 Melhoria de 40-60% na precisão das respostas
+- 🎯 Redução significativa de alucinações
+- 💰 Otimização de custos através de prompts eficientes
+- 🔧 Toolkit completo para diferentes cenários
+
+### [🤖 Lab 4: Frameworks Avançados - Semantic Kernel e AutoGen](lab4/)
 **Desenvolvimento com Frameworks Especializados**
 
-- **Semantic Kernel**: Framework da Microsoft para integração modular de LLMs
-- **AutoGen**: Criação de agentes conversacionais e fluxos multiagente
-- **LangChain**: Componentes para aplicações baseadas em LLMs
+Explore frameworks poderosos para criar aplicações inteligentes escaláveis e robustas.
 
-**Comparação de Frameworks:**
-- Pontos fortes e casos de uso ideais para cada framework
-- Exemplos práticos de implementação
-- Integração com ecossistemas existentes
-- Considerações de arquitetura e deployment
+**🧮 Semantic Kernel**
+- SDK open-source da Microsoft para integração modular
+- Plugins personalizados e reutilizáveis
+- Templates de prompts dinâmicos
+- Integração com sistemas existentes
 
-**Exercícios Práticos:**
-- Implementação de agentes especializados
-- Criação de fluxos de processamento complexos
-- Integração com APIs e serviços externos
+**🎭 AutoGen (v0.6+)**
+- Framework multi-agente para colaboração
+- Agentes especializados por domínio
+- Conversação estruturada entre agentes
+- Nova API simplificada com `model_client`
 
-### [Lab 5: Implementação de RAG com Azure OpenAI e Azure AI Search](lab5/)
-**Padrões Avançados de Recuperação e Geração**
+**Projeto Prático - Sistema de Análise de Produtos:**
+```
+Feedbacks → Semantic Kernel (Análise) → AutoGen (Especialistas) → Relatório
+```
 
-- Conceitos fundamentais de RAG (Retrieval Augmented Generation)
-- Configuração de Azure OpenAI e Azure AI Search
-- Criação e indexação de bases de conhecimento
-- Implementação de fluxos completos de RAG
-- Estratégias de otimização e refinamento
+**Quando Usar Cada Framework:**
+- **Semantic Kernel**: Single-agent, plugins, integração sistemas
+- **AutoGen**: Multi-agente, brainstorming, decisões colaborativas
 
-**Arquitetura Implementada:**
-- Base de conhecimento indexada no Azure AI Search
-- Serviços de recuperação para documentos relevantes
-- Modelos de linguagem para geração informada
-- Avaliação e métricas de qualidade
+### [🔍 Lab 5: RAG (Retrieval-Augmented Generation) Completo](lab5/)
+**Sistema de Recuperação e Geração Aumentada**
 
-**Técnicas Avançadas:**
-- Chunking e embedding de documentos
-- Filtragem semântica
-- Reranking de resultados
-- Estratégias de cache e performance
+Implemente um sistema RAG completo que combina busca semântica com geração de texto para respostas precisas e atualizadas.
 
-## Pré-requisitos
+**Pipeline RAG Completo:**
+1. **Preparação**: Documentos → Embeddings → Índice vetorial
+2. **Retrieval**: Pergunta → Busca semântica → Documentos relevantes
+3. **Augmentation**: Contexto + Pergunta → Prompt enriquecido
+4. **Generation**: LLM → Resposta fundamentada → Fontes citadas
 
-### Obrigatórios
+**Comparação Demonstrada:**
+- ❌ **Sem RAG**: Respostas genéricas, possíveis alucinações
+- ✅ **Com RAG**: Respostas específicas, fontes verificáveis, precisão alta
+
+**Implementação Incluída:**
+- Busca semântica com similaridade coseno
+- Integração com Azure AI Search (código real)
+- Sistema de avaliação de qualidade
+- Testes interativos personalizáveis
+
+**Para Produção:**
+- Estratégias de chunking (512-1024 tokens)
+- Busca híbrida (keyword + semântica)
+- Re-ranking e cache de resultados
+- Métricas de monitoramento e governança
+
+## 🛠️ Configuração e Pré-requisitos
+
+### **Obrigatórios:**
 - Assinatura do Azure com acesso aos serviços de IA
 - Python 3.8 ou superior
-- Conhecimentos básicos de programação e APIs
-- Acesso ao Azure AI Foundry
+- Conhecimentos básicos de programação e APIs REST
+- Acesso ao Azure AI Foundry ([ai.azure.com](https://ai.azure.com/))
 
-### Recomendados
+### **Recomendados:**
 - Visual Studio Code com extensões do Azure e Python
 - Azure CLI para interações via linha de comando
 - Git para controle de versão
 - Conhecimentos básicos de machine learning
 
-## Configuração Inicial
+## ⚙️ Configuração Inicial
 
 ### 1. Preparação do Ambiente Azure
 ```bash
@@ -126,56 +169,142 @@ az group create --name "ai-foundry-workshop-rg" --location "eastus"
 
 ### 2. Configuração Local
 1. Clone este repositório
-2. Configure seu arquivo `.env` com as credenciais do Azure
+2. Configure seu arquivo `.env` na raiz com as credenciais do Azure
 3. Instale as dependências necessárias para cada laboratório
 4. Verifique o acesso ao Azure AI Foundry
 
 ### 3. Variáveis de Ambiente Necessárias
+Crie um arquivo `.env` na raiz do projeto com:
+
+```bash
+# Azure OpenAI (Obrigatório para todos os labs)
+AZURE_OPENAI_ENDPOINT=https://your-openai.openai.azure.com/
+AZURE_OPENAI_API_KEY=your-key
+API_VERSION=2024-10-21
+AZURE_OPENAI_DEPLOYMENT=gpt-4o
+AZURE_OPENAI_EMBEDDING_MODEL=text-embedding-ada-002
+
+# Azure AI Speech (Lab 2)
+SPEECH_ENDPOINT=https://your-speech.cognitiveservices.azure.com/
+SPEECH_KEY=your-speech-key
+SPEECH_REGION=eastus
+
+# Azure AI Language (Lab 2)  
+AZURE_LANGUAGE_ENDPOINT=https://your-language.cognitiveservices.azure.com/
+AZURE_LANGUAGE_KEY=your-language-key
+
+# Azure AI Vision (Lab 2)
+AZURE_VISION_ENDPOINT=https://your-vision.cognitiveservices.azure.com/
+AZURE_VISION_KEY=your-vision-key
+
+# Azure AI Content Safety (Lab 2)
+CONTENT_SAFETY_ENDPOINT=https://your-safety.cognitiveservices.azure.com/
+CONTENT_SAFETY_KEY=your-safety-key
+
+# Azure AI Search (Lab 5 - Opcional)
+AZURE_SEARCH_ENDPOINT=https://your-search.search.windows.net
+AZURE_SEARCH_KEY=your-search-key
+AZURE_SEARCH_INDEX=rag-index
+
+# Modelos Adicionais (Labs 1 e 4)
+AZURE_PHI4_ENDPOINT=https://your-phi4.inference.ai.azure.com
+AZURE_PHI4_API_KEY=your-phi4-key
+AZURE_PHI4_DEPLOYMENT=phi-4
+AZURE_PHI4_API_VERSION=2024-04-01-preview
 ```
-# Azure OpenAI
-AZURE_OPENAI_ENDPOINT=
-AZURE_OPENAI_API_KEY=
-AZURE_OPENAI_API_VERSION=
 
-# Azure AI Services
-SPEECH_ENDPOINT=
-SPEECH_KEY=
-SPEECH_REGION=
+## 🎓 Progressão Recomendada
 
-LANGUAGE_ENDPOINT=
-LANGUAGE_KEY=
+### **Para Iniciantes:**
+1. **Lab 1** → Fundamentos do Azure OpenAI
+2. **Lab 2** → Serviços de IA multimodais
+3. **Lab 3** → Prompt Engineering básico
 
-VISION_ENDPOINT=
-VISION_KEY=
+### **Para Desenvolvedores Intermediários:**
+1. **Labs 1-3** → Base sólida em IA generativa
+2. **Lab 4** → Frameworks avançados
+3. **Lab 5** → Implementação RAG
 
-CONTENT_SAFETY_ENDPOINT=
-CONTENT_SAFETY_KEY=
+### **Para Especialistas:**
+- Escolha laboratórios específicos baseados em necessidades
+- Combine conceitos de múltiplos labs para projetos complexos
+- Use como referência para implementações em produção
 
-# Azure AI Search (Lab 5)
-SEARCH_ENDPOINT=
-SEARCH_KEY=
-```
-
-## Progressão Recomendada
-
-1. **Iniciantes**: Comece pelo Lab 1 para entender os fundamentos
-2. **Intermediário**: Labs 1-3 fornecem uma base sólida em IA generativa
-3. **Avançado**: Labs 4-5 abordam arquiteturas e padrões complexos
-4. **Especialização**: Escolha laboratórios específicos baseados em suas necessidades
-
-## Resultados de Aprendizado
+## 🎯 Resultados de Aprendizado
 
 Ao concluir este workshop, você será capaz de:
 
-✅ **Dominar Azure AI Foundry**: Navegar e utilizar a plataforma efetivamente
-✅ **Desenvolver Soluções de IA**: Construir aplicações completas end-to-end
-✅ **Aplicar Prompt Engineering**: Otimizar interações com modelos de linguagem
-✅ **Implementar Padrões RAG**: Combinar recuperação e geração para respostas precisas
-✅ **Usar Frameworks Especializados**: Escolher e implementar as ferramentas certas
-✅ **Integrar Múltiplos Serviços**: Combinar diferentes serviços de IA do Azure
-✅ **Seguir Melhores Práticas**: Implementar segurança e governança adequadas
+| Competência | Nível | Laboratórios |
+|-------------|-------|--------------|
+| **Azure AI Foundry** | 🟢 Avançado | Todos |
+| **Prompt Engineering** | 🟢 Avançado | Lab 3 |
+| **RAG Implementation** | 🟢 Avançado | Lab 5 |
+| **Multi-Agent Systems** | 🟡 Intermediário | Lab 4 |
+| **Multimodal AI** | 🟡 Intermediário | Labs 1-2 |
+| **AI Safety & Governance** | 🟡 Intermediário | Lab 2 |
 
-## Recursos Adicionais
+### **Habilidades Técnicas Desenvolvidas:**
+✅ Configurar e usar Azure OpenAI Service efetivamente  
+✅ Implementar sistemas RAG de qualidade produtiva  
+✅ Aplicar técnicas de prompt engineering para cenários específicos  
+✅ Desenvolver agentes especializados com Semantic Kernel e AutoGen  
+✅ Integrar múltiplos serviços de IA do Azure  
+✅ Seguir melhores práticas de segurança e governança  
+✅ Otimizar custos e performance de soluções de IA  
+
+### **Competências de Negócio:**
+📈 Identificar casos de uso de IA em organizações  
+🛠️ Escolher a tecnologia adequada para cada cenário  
+📊 Avaliar ROI e impacto de soluções de IA  
+⚖️ Implementar IA responsável e ética  
+
+## 📚 Recursos Adicionais
+
+### **Documentação Oficial:**
+- [Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- [Azure OpenAI Service](https://learn.microsoft.com/azure/ai-services/openai/)
+- [Azure AI Services](https://learn.microsoft.com/azure/ai-services/)
+- [Prompt Engineering Guide](https://learn.microsoft.com/azure/ai-services/openai/concepts/prompt-engineering)
+
+### **Ferramentas e Plataformas:**
+- [Azure AI Foundry Portal](https://ai.azure.com/)
+- [Azure OpenAI Studio](https://oai.azure.com/)
+- [Azure AI Studio](https://ai.azure.com/explore/aiservices)
+- [GitHub Copilot](https://github.com/features/copilot) para desenvolvimento
+
+### **Comunidade e Suporte:**
+- [Microsoft AI Community](https://learn.microsoft.com/community/)
+- [Azure AI Foundry Samples](https://github.com/Azure/AI-Foundry-Samples)
+- [Azure OpenAI Examples](https://github.com/Azure/azure-openai-samples)
+- [Microsoft Learn](https://learn.microsoft.com/training/browse/?products=azure-openai%2Cazure-ai-services)
+
+### **Certificações Relacionadas:**
+- [AI-102: Azure AI Engineer Associate](https://learn.microsoft.com/certifications/azure-ai-engineer/)
+- [AI-900: Azure AI Fundamentals](https://learn.microsoft.com/certifications/azure-ai-fundamentals/)
+- [Azure Solutions Architect Expert](https://learn.microsoft.com/certifications/azure-solutions-architect/)
+
+## 🚀 Próximos Passos
+
+Após completar o workshop:
+
+1. **🔬 Experimente**: Aplique os conceitos em projetos pessoais
+2. **🏢 Implemente**: Use em cenários reais da sua organização  
+3. **📢 Compartilhe**: Contribua com a comunidade Azure AI
+4. **📖 Continue Aprendendo**: Explore funcionalidades avançadas e novos serviços
+5. **🎯 Especialize-se**: Foque em áreas específicas como RAG, Multi-Agent ou Computer Vision
+
+## 💬 Suporte e Contribuições
+
+- **Issues**: Use as [Issues do GitHub](../../issues) para reportar problemas
+- **Discussões**: Participe das [Discussions](../../discussions) para trocar ideias
+- **Contribuições**: PRs são bem-vindos para melhorias e correções
+- **Feedback**: Seus comentários ajudam a melhorar o workshop
+
+---
+
+**Desenvolvido com ❤️ pela comunidade Azure AI**
+
+*Este workshop é mantido pela comunidade e não representa posições oficiais da Microsoft*
 
 ### Documentação Oficial
 - [Azure AI Foundry](https://learn.microsoft.com/pt-br/azure/ai-foundry/)
