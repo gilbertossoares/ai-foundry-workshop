@@ -2,6 +2,8 @@
 
 Welcome to the Azure AI Foundry Workshop! This comprehensive hands-on workshop will guide you through the latest capabilities of Azure AI Foundry, Microsoft's unified platform for building, deploying, and managing AI applications.
 
+![Azure AI Foundry Workshop](images/workshopfoundry.jpeg)
+
 ## 🎯 Workshop Overview
 
 Azure AI Foundry provides a collaborative environment for AI development, offering tools for data preparation, model training, fine-tuning, evaluation, and deployment. This workshop covers everything from getting started to advanced scenarios with practical implementations.
