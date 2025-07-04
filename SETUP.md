@@ -45,6 +45,26 @@ pip install openai azure-search-documents azure-core python-dotenv numpy
 
 ## Configuração das Variáveis de Ambiente
 
+### ⚠️ IMPORTANTE - Segurança
+
+**NUNCA** commite arquivos contendo chaves de API ou secrets reais no GitHub ou outros repositórios públicos. Sempre use o arquivo `.env.example` como template e configure suas próprias credenciais em um arquivo `.env` local.
+
+### Passos para Configuração Segura
+
+1. **Copie o arquivo de exemplo:**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Edite o arquivo `.env` com suas credenciais reais:**
+   - Substitua todos os valores `your-*` pelos valores reais dos seus recursos Azure
+   - Mantenha este arquivo sempre local (ele já está no .gitignore)
+
+3. **Para desenvolvimento em equipe:**
+   - Compartilhe apenas o arquivo `.env.example`
+   - Cada desenvolvedor deve criar seu próprio arquivo `.env`
+   - Documente onde obter as credenciais (ex: Azure Portal, Key Vault)
+
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 ```env
